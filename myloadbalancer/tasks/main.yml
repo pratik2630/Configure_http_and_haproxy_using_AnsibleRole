@@ -1,0 +1,35 @@
+---
+# tasks file for myloadbalancer\
+- name: "install HAproxy"
+  package:
+          name: haproxy
+          state: present
+
+- name: "SElinux permissive"
+  selinux:
+          policy: targeted
+          state: permissive
+
+- name: firewalld rule
+  firewalld:
+          port: 8080/tcp
+          state: enabled
+          permanent: yes
+          immediate: yes
+
+
+- name: start haproxy
+  service:
+          name: haproxy
+          state: started
+
+- name: copy HAproxy configuration files to LoadBalancer
+  template:
+          src: haproxy.cfg
+          dest: /etc/haproxy/
+  notify: restart loadbalancer
+
+
+
+
+
