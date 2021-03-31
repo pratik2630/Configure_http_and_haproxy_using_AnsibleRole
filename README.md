@@ -4,3 +4,6 @@ TASK DESCRIPTION:🔅Create an ansible role myapache to configure Httpd WebServe
 
 Run main.yml file on your system to work both playbook at a time.
 command: ansible-playbook main.yml
+
+
+To access webpage you have to use loadbalancer's ip address
