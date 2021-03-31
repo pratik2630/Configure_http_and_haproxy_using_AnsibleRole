@@ -6,4 +6,5 @@ Run main.yml file on your system to work both playbook at a time.
 command: ansible-playbook main.yml
 
 
-To access webpage you have to use loadbalancer's ip address
+To access webpage you have to use loadbalancer's ip address and run with port 8080 and site name.
+Example- http://<LoadBalancer_IPAddrees>:8080/index.php
